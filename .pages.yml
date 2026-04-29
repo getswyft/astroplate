@@ -11,6 +11,30 @@ content:
         type: string
       - name: body
         type: rich-text
+  - name: recipes
+    label: Recipes
+    type: collection
+    path: src/recipes
+    fields:
+      - name: title
+        type: string
+      - name: cover
+        label: Cover image
+        type: image
+        options:
+          media: images
+          path: public/images/recipes
+      - name: gallery
+        label: Gallery
+        type: image
+        options:
+          multiple:
+            max: 6
+          unique: true
+          extensions: [jpg, png, webp]
+          rename: true
+      - name: body
+        type: rich-text
   - name: site
     label: Site settings
     type: file
